@@ -8,6 +8,7 @@
   --accent-color: #64ffda;
   --accent-hover: #006b39;
   --button-text-hover-color: #ffffff; /* Text color for buttons on hover */
+  --overlay-color: rgba(0, 0, 0, 0.6); /* For text background */
 }
 
 body, html {
@@ -53,9 +54,6 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   height: 100vh; /* Full viewport height */
-  color: var(--text-color);
-  text-align: center;
-  position: relative; /* Ensures that the pseudo-element is positioned relative to this container */
 }
 
 .header h1 {
@@ -69,38 +67,54 @@ nav a:hover {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
 }
 
+/* Adjust main content section */
 main {
   margin-top: -100px; /* Overlap main content with the header */
 }
 
+/* Styling for each section */
 section {
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for sections */
   margin: 0; /* Remove margins to eliminate gaps */
+  position: relative;
+  z-index: 2;
 }
 
+section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--overlay-color);
+  z-index: -1;
+}
+
+/* Button styles */
 .button {
   background: var(--accent-color);
   color: #000;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 0.3rem;
   margin: 0.5rem;
-  transition: background-color 0.3s, transform 0.3s, color 0.3s;
-  }
+  transition: all 0.3s ease;
+}
 
 .button:hover, .button:focus {
   background-color: var(--accent-hover);
-  color: var(--button-text-hover-color); /* Change text color on hover for visibility */
-  transform: scale(1.1); /* Gives a lift effect */
-  outline: none; /* Removes the outline that browsers might add on focus */
+  color: var(--button-text-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
+/* Footer styles */
 footer {
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--overlay-color);
   padding: 1rem;
   position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -110,10 +124,11 @@ footer {
   }
 }
 
+/* Contact form styles */
 #contact-form {
   display: flex;
   flex-direction: column;
-  max-width: 500px; /* Adjust width as needed */
+  max-width: 500px;
   margin: auto;
 }
 
@@ -145,5 +160,5 @@ footer {
 
 #contact-form button:hover {
   background-color: var(--accent-hover);
-  color: var(--button-text-hover-color); /* Ensuring the text color changes on hover */
+  color: var(--button-text-hover-color);
 }

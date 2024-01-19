@@ -27,10 +27,6 @@ body, html {
   text-decoration: none;
 }
 
-.links {
-  display: grid;
-}
-
 nav {
   background: var(--nav-background);
   position: fixed;

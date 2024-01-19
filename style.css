@@ -2,7 +2,7 @@
 
 :root {
   --font-primary: 'Roboto', sans-serif;
-  --background-image: url('./img/pexels-emiliano-arano-3608311.jpg'); /* Make sure this path is correct */
+  --background-image: url('./img/pexels-emiliano-arano-3608311.jpg');
   --text-color: #ffffff;
   --nav-background: #333;
   --accent-color: #64ffda;

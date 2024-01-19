@@ -102,6 +102,8 @@ section::after {
   border-radius: 0.3rem;
   margin: 0.5rem;
   transition: all 0.3s ease;
+  display: inline-block; /* Ensure buttons are inline elements */
+  margin: 0.5rem; /* Space around buttons */
 }
 
 .button:hover, .button:focus {
@@ -117,13 +119,6 @@ footer {
   padding: 1rem;
   position: relative;
   z-index: 2;
-}
-
-@media (max-width: 768px) {
-  .header {
-    height: auto;
-    padding: 4rem 1rem;
-  }
 }
 
 /* Contact form styles */
@@ -163,4 +158,66 @@ footer {
 #contact-form button:hover {
   background-color: var(--accent-hover);
   color: var(--button-text-hover-color);
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1200px) {
+  /* Adjustments for medium screens, if necessary */
+}
+
+@media (max-width: 992px) {
+  /* Adjustments for small screens, if necessary */
+}
+
+@media (max-width: 768px) {
+  .button {
+    /* Increase vertical spacing for stacked buttons */
+    margin: 0.5rem 0.25rem;
+  }
+
+  #links .button {
+    /* Ensure buttons do not stretch beyond the container width */
+    max-width: calc(100% - 0.5rem);
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+  }
+}
+
+@media (max-width: 576px) {
+  nav a {
+    /* Decrease font size if necessary */
+    font-size: 0.8rem;
+  }
+
+  .button {
+    /* Further increase vertical spacing for smaller screens */
+    margin: 0.5rem 0.2rem;
+    padding: 0.5rem 1rem; /* Adjust padding to ensure buttons are still tappable */
+    font-size: 0.8rem; /* Decrease font size to prevent wrapping */
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    /* Even smaller font size for very small screens */
+    font-size: 0.7rem;
+  }
+
+  /* Adjust form input and button sizes for small screens */
+  #contact-form input[type=email], #contact-form textarea, #contact-form button {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .button {
+    /* Slight adjustments for extremely small screens */
+    font-size: 0.6rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Adjust form input and button sizes for extra small screens */
+  #contact-form input[type=email], #contact-form textarea, #contact-form button {
+    font-size: 0.7rem;
+  }
 }

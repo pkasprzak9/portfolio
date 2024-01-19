@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --font-primary: 'Roboto', sans-serif;
+  --background-image: url('./img/pexels-emiliano-arano-3608311.jpg'); /* Make sure this path is correct */
+  --text-color: #ffffff;
+  --nav-background: #333;
+  --accent-color: #64ffda;
+  --accent-hover: #52b788;
+  --button-text-hover-color: #ffffff; /* Text color for buttons on hover */
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background: var(--background-image) no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  color: var(--text-color);
+}
+
+:any-link {
+  text-decoration: none;
+}
+
+nav {
+  background: var(--nav-background);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: var(--accent-hover);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+}
+
+main {
+  margin-top: -100px; /* Overlap main content with the header */
+}
+
+section {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for sections */
+  margin: 0; /* Remove margins to eliminate gaps */
+}
+
+.button {
+  background: var(--accent-color);
+  color: #000;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  margin: 0.5rem;
+  transition: background-color 0.3s, transform 0.3s, color 0.3s;
+  }
+
+.button:hover, .button:focus {
+  background-color: var(--accent-hover);
+  color: var(--button-text-hover-color); /* Change text color on hover for visibility */
+  transform: translateY(-3px); /* Gives a lift effect */
+  outline: none; /* Removes the outline that browsers might add on focus */
+}
+
+
+footer {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px; /* Adjust width as needed */
+  margin: auto;
+}
+
+#contact-form input[type=email],
+#contact-form textarea {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+
+#contact-form button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: var(--accent-hover);
+  color: var(--button-text-hover-color); /* Ensuring the text color changes on hover */
+}

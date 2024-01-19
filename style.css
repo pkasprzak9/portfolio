@@ -53,6 +53,20 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   height: 100vh; /* Full viewport height */
+  color: var(--text-color);
+  text-align: center;
+  position: relative; /* Ensures that the pseudo-element is positioned relative to this container */
+}
+
+.header h1 {
+  font-size: 4rem; /* Increased font size */
+  font-weight: 700; /* Bold font weight */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+}
+
+.header p {
+  font-size: 1.5rem; /* Increased font size */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
 }
 
 main {

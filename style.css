@@ -109,6 +109,13 @@ footer {
   border: 1px solid #ccc;
   border-radius: 4px;
   background: #fff;
+  transition: border-color 0.3s;
+}
+
+#contact-form input[type=email]:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
 }
 
 #contact-form button {

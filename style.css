@@ -206,6 +206,9 @@ footer {
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+  .header {
+    height: 100vh; /* Full height for smaller screens */
+  }
   #links {
     /* Stacking links in a column */
     display: flex;
@@ -221,6 +224,9 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .header {
+    height: 100vh; /* Full height for smaller screens */
+  }
   #links .button {
     /* Adjustments for smaller screens */
     width: 90%; /* Even wider buttons on smaller screens */

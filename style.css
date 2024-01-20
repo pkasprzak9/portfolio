@@ -1,50 +1,7 @@
+/* Importing Roboto font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-20px);
-  }
-  60% {
-    transform: translateY(-10px);
-  }
-}
-
-.skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dostosuje do maksymalnie 4 kolumn */
-  gap: 20px;
-  padding: 20px;
-}
-
-.skill-card {
-  background-color: rgba(0, 0, 0, 0.7); /* Przykładowe tło karty */
-  color: #fff; /* Biały tekst */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Cień dla karty */
-}
-
-.skill-level {
-  display: flex;
-  justify-content: center; /* Wyśrodkowanie kółek */
-}
-
-.circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #ddd;
-  margin: 0 5px;
-}
-
-.circle.filled {
-  background-color: #64ffda;
-}
-
-
+/* Root CSS Variables for easy theme management */
 :root {
   --font-primary: 'Roboto', sans-serif;
   --background-image: url('./img/pexels-emiliano-arano-3608311.jpg');
@@ -52,10 +9,11 @@
   --nav-background: #333;
   --accent-color: #64ffda;
   --accent-hover: #006b39;
-  --button-text-hover-color: #ffffff; /* Text color for buttons on hover */
-  --overlay-color: rgba(0, 0, 0, 0.6); /* For text background */
+  --button-text-hover-color: #ffffff;
+  --overlay-color: rgba(0, 0, 0, 0.6);
 }
 
+/* Global styles */
 body, html {
   height: 100%;
   margin: 0;
@@ -69,10 +27,12 @@ body, html {
   scroll-behavior: smooth;
 }
 
+/* Link styling */
 :any-link {
   text-decoration: none;
 }
 
+/* Navigation styles */
 nav {
   background: var(--nav-background);
   position: fixed;
@@ -95,65 +55,75 @@ nav a:hover {
   color: var(--accent-hover);
 }
 
+/* Header styles */
 .header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh; /* Minimum height to fill the viewport */
-  margin-bottom: -100px; /* Negative margin to pull the next content up */
+  min-height: 100vh;
+  margin-bottom: -100px;
 }
 
 .header h1 {
-  font-size: 4rem; /* Increased font size */
-  font-weight: 700; /* Bold font weight */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .header p {
-  font-size: 1.5rem; /* Increased font size */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
+
+/* Scroll indicator bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
 .scroll-indicator-wrapper {
   position: absolute;
-  bottom: 3%; /* Position at the bottom of the header */
-  left: 50%; /* Center it horizontally */
-  transform: translateX(-50%); /* Align center horizontally */
-  z-index: 10; /* Make sure it's above other content */
-  pointer-events: none; /* Prevents the element from capturing clicks */
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
 }
 
 .scroll-indicator {
-  font-size: 1.5rem; /* Larger font size for visibility */
-  color: var(--button-text-hover-color); /* Text color from the defined variable */
-  text-transform: uppercase; /* Uppercase text for stylistic choice */
-  letter-spacing: 1px; /* Spacing between letters for better readability */
-  animation: bounce 2s infinite; /* Infinite bounce animation */
-  user-select: none; /* Prevent text from being selected */
-  opacity: 0.7; /* Semi-transparent for better blending with the background */
-  transition: opacity 0.3s ease-in-out; /* Smooth transition for the opacity change */
+  font-size: 1.5rem;
+  color: var(--button-text-hover-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: bounce 2s infinite;
+  user-select: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
 }
 
+/* Fade out animation for scroll indicator */
 .fade-out {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.1s, visibility 0.1s;
 }
 
-/* Adjust main content section */
+/* Main content section adjustment */
 main {
-  margin-top: -100px; /* Overlap main content with the header */
-  padding-top: 100px; /* Add padding to compensate for header height */
+  margin-top: -100px;
+  padding-top: 100px;
 }
 
-/* Styling for each section */
+/* General section styles */
 section {
   padding: 2rem;
-  margin: 0; /* Remove margins to eliminate gaps */
+  margin: 0;
   position: relative;
   z-index: 2;
-  font-size: 1.3rem;
 }
 
+/* Background overlay for sections */
 section::after {
   content: '';
   position: absolute;
@@ -174,8 +144,7 @@ section::after {
   border-radius: 0.3rem;
   margin: 0.5rem;
   transition: all 0.3s ease;
-  display: inline-block; /* Ensure buttons are inline elements */
-  margin: 0.5rem; /* Space around buttons */
+  display: inline-block;
 }
 
 .button:hover, .button:focus {
@@ -183,14 +152,6 @@ section::after {
   color: var(--button-text-hover-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer styles */
-footer {
-  background: var(--overlay-color);
-  padding: 1rem;
-  position: relative;
-  z-index: 2;
 }
 
 /* Contact form styles */
@@ -201,8 +162,7 @@ footer {
   margin: auto;
 }
 
-#contact-form input[type=email],
-#contact-form textarea {
+#contact-form input[type=email], #contact-form textarea {
   resize: vertical;
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -212,8 +172,7 @@ footer {
   transition: border-color 0.3s;
 }
 
-#contact-form input[type=email]:focus,
-#contact-form textarea:focus {
+#contact-form input[type=email]:focus, #contact-form textarea:focus {
   outline: none;
   border-color: var(--accent-color);
 }
@@ -238,26 +197,58 @@ footer {
   color: var(--button-text-hover-color);
 }
 
+/* Footer styles */
+footer {
+  background: var(--overlay-color);
+  padding: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-  #links {
-    /* Stacking links in a column */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   #links .button {
-    /* Full width buttons with more vertical space */
-    width: 80%; /* Adjust the width to your preference */
-    margin: 0.5rem 0; /* Increase vertical margin */
+    width: 80%;
+    margin: 0.5rem 0;
   }
 }
 
 @media (max-width: 480px) {
   #links .button {
-    /* Adjustments for smaller screens */
-    width: 90%; /* Even wider buttons on smaller screens */
-    padding: 0.6rem; /* Slightly larger padding */
+    width: 90%;
+    padding: 0.6rem;
   }
+}
+
+/* Skills container and cards */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.skill-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.skill-level {
+  display: flex;
+  justify-content: center;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 5px;
+}
+
+.circle.filled {
+  background-color: var(--accent-color);
 }

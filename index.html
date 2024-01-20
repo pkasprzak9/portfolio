@@ -15,7 +15,9 @@
     <div class="header">
         <h1>Paweł Kasprzak</h1>
         <p>Welcome to my page!</p>
-        <div class="scroll-indicator">Scroll Up</div>
+        <div class="scroll-indicator-wrapper">
+            <div class="scroll-indicator">Swipe up</div>
+        </div>
     </div>
     <main>
         <section id="about">
@@ -38,5 +40,23 @@
     <footer>
         <p>© 2024 pkasprzak9. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const swipeIndicator = document.querySelector('.swipe-up-indicator');
+
+            window.addEventListener('scroll', () => {
+              // This checks if the page has been scrolled down at all
+              if (window.scrollY > 0) {
+                swipeIndicator.style.opacity = '0';
+                swipeIndicator.style.visibility = 'hidden';
+              } else {
+                swipeIndicator.style.opacity = '1';
+                swipeIndicator.style.visibility = 'visible';
+              }
+            });
+          });
+
+      </script>
+
 </body>
 </html>

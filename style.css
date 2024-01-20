@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
 :root {
   --font-primary: 'Roboto', sans-serif;
   --background-image: url('./img/pexels-emiliano-arano-3608311.jpg');
@@ -66,6 +78,25 @@ nav a:hover {
 .header p {
   font-size: 1.5rem; /* Increased font size */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+}
+.scroll-indicator-wrapper {
+  position: absolute;
+  bottom: 3%; /* Position at the bottom of the header */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%); /* Align center horizontally */
+  z-index: 10; /* Make sure it's above other content */
+  pointer-events: none; /* Prevents the element from capturing clicks */
+}
+
+.scroll-indicator {
+  font-size: 1.5rem; /* Larger font size for visibility */
+  color: var(--button-text-hover-color); /* Text color from the defined variable */
+  text-transform: uppercase; /* Uppercase text for stylistic choice */
+  letter-spacing: 1px; /* Spacing between letters for better readability */
+  animation: bounce 2s infinite; /* Infinite bounce animation */
+  user-select: none; /* Prevent text from being selected */
+  opacity: 0.7; /* Semi-transparent for better blending with the background */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for the opacity change */
 }
 
 /* Adjust main content section */

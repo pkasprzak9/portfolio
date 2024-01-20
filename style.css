@@ -206,11 +206,6 @@ footer {
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-
-  .header {
-    height: calc(100vh - 50px); /* 50px to przybliżona wysokość paska adresu */
-  }
-
   #links {
     /* Stacking links in a column */
     display: flex;
@@ -226,10 +221,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .header {
-    height: calc(100vh - 50px); /* 50px to przybliżona wysokość paska adresu */
-  }
-
   #links .button {
     /* Adjustments for smaller screens */
     width: 90%; /* Even wider buttons on smaller screens */

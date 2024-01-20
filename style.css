@@ -99,6 +99,12 @@ nav a:hover {
   transition: opacity 0.3s ease-in-out; /* Smooth transition for the opacity change */
 }
 
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s, visibility 0.1s;
+}
+
 /* Adjust main content section */
 main {
   margin-top: -100px; /* Overlap main content with the header */

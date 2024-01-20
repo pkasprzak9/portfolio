@@ -40,23 +40,6 @@
     <footer>
         <p>© 2024 pkasprzak9. All rights reserved.</p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const swipeIndicator = document.querySelector('.swipe-up-indicator');
-
-            window.addEventListener('scroll', () => {
-              // This checks if the page has been scrolled down at all
-              if (window.scrollY > 0) {
-                swipeIndicator.style.opacity = '0';
-                swipeIndicator.style.visibility = 'hidden';
-              } else {
-                swipeIndicator.style.opacity = '1';
-                swipeIndicator.style.visibility = 'visible';
-              }
-            });
-          });
-
-      </script>
-
+    <script src="script.js"></script>
 </body>
 </html>

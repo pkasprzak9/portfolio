@@ -12,6 +12,39 @@
   }
 }
 
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dostosuje do maksymalnie 4 kolumn */
+  gap: 20px;
+  padding: 20px;
+}
+
+.skill-card {
+  background-color: rgba(0, 0, 0, 0.7); /* Przykładowe tło karty */
+  color: #fff; /* Biały tekst */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Cień dla karty */
+}
+
+.skill-level {
+  display: flex;
+  justify-content: center; /* Wyśrodkowanie kółek */
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 5px;
+}
+
+.circle.filled {
+  background-color: #64ffda;
+}
+
+
 :root {
   --font-primary: 'Roboto', sans-serif;
   --background-image: url('./img/pexels-emiliano-arano-3608311.jpg');

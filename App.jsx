@@ -25,13 +25,25 @@ function SkillCard({ skill, level }) {
 
 function SkillsSection() {
   const skills = [
+    { skill: "Visual Studio Code", level: "Expert" },
+    { skill: "Git", level: "Advanced" },
+    { skill: "Command Line", level: "Advanced" },
+    { skill: "Microsoft Office", level: "Advanced" },
+    { skill: "Ruby", level: "Advanced" },
+    { skill: "RSpec", level: "Advanced" },
+    { skill: "Python", level: "Advanced" },
+    { skill: "HTML", level: "Advanced" },
+    { skill: "CSS", level: "Advanced" },
+    { skill: "JavaScript", level: "Intermediate" },
     { skill: "SQL", level: "Intermediate" },
-    { skill: "Figma", level: "Beginner" },
-    { skill: "Azure", level: "Beginner" },
-    { skill: "SQL", level: "Intermediate" },
-    { skill: "Figma", level: "Beginner" },
-    { skill: "Azure", level: "Beginner" },
-    // Pozostałe umiejętności...
+    { skill: "Java", level: "Intermediate" },
+    { skill: "Data analyze", level: "Intermediate" },
+    { skill: "Networking", level: "Intermediate" },
+    { skill: "React", level: "Beginner" },
+    { skill: "Bootstrap", level: "Beginner" },
+    { skill: "AOS", level: "Beginner" },
+    { skill: "C++", level: "Beginner" },
+    { skill: "Microsoft Azure", level: "Beginner" },
   ];
 
 

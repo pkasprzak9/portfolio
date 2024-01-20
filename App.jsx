@@ -61,20 +61,25 @@ function SkillsSection() {
 
 
 ReactDOM.render(<SkillsSection />, document.getElementById('skills-root'));
-function SocialLink({ url, name }) {
+
+function SocialLink({ url, iconName }) {
+  // Dodaj ścieżkę do ikon SVG. Zakładam, że są one w publicznym folderze `icons`.
+  const iconSrc = `./icons/${iconName}.svg`;
+
   return (
     <a href={url} target="_blank" rel="noopener noreferrer" className="button">
-      {name}
+      <img src={iconSrc} alt={iconName} className="social-icon" />
     </a>
   );
 }
 
+
 function SocialLinksSection() {
   const socialLinks = [
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/paweł-kasprzak-097496278/', className: 'linkedin' },
-    { name: 'GitHub', url: 'https://github.com/pkasprzak9', className: 'github' },
-    { name: 'Instagram', url: 'https://www.instagram.com/p_kasprzak/', className: 'instagram' },
-    { name: 'Facebook', url: 'https://www.facebook.com/pawel.kasprzak12345/', className: 'facebook' }
+    { iconName: 'linkedin', url: 'https://www.linkedin.com/in/paweł-kasprzak-097496278/' },
+    { iconName: 'github', url: 'https://github.com/pkasprzak9' },
+    { iconName: 'instagram', url: 'https://www.instagram.com/p_kasprzak/' },
+    { iconName: 'facebook', url: 'https://www.facebook.com/pawel.kasprzak12345/' }
   ];
 
   return (
@@ -82,7 +87,7 @@ function SocialLinksSection() {
       <h2>My Links</h2>
       <div className="social-links-container">
         {socialLinks.map((link, index) => (
-          <SocialLink key={index} name={link.name} url={link.url} />
+          <SocialLink key={index} iconName={link.iconName} url={link.url} />
         ))}
       </div>
     </div>
@@ -90,3 +95,4 @@ function SocialLinksSection() {
 }
 
 ReactDOM.render(<SocialLinksSection />, document.getElementById('links'));
+

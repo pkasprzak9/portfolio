@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   const swipeIndicator = document.querySelector('.scroll-indicator');
-  const aboutSection = document.querySelector('#about');
+  const header = document.querySelector('.header');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) {
+      if (entry.isIntersecting) {
         swipeIndicator.classList.remove('fade-out');
       } else {
         swipeIndicator.classList.add('fade-out');
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.99 }); // Możemy spróbować z wartością bliską 1, np. 0.99
 
-  observer.observe(aboutSection);
+  observer.observe(header);
 });

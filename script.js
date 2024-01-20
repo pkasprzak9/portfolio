@@ -1,16 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const adjustHeaderHeight = () => {
-    const header = document.querySelector('.header');
-    header.style.height = window.innerHeight + 'px';
-  };
-
-  // Ajust the header height when the page is loaded and when it's resized
-  adjustHeaderHeight();
-  window.addEventListener('resize', adjustHeaderHeight);
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
   const swipeIndicator = document.querySelector('.scroll-indicator');
   const header = document.querySelector('.header');
 

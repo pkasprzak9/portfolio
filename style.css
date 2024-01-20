@@ -33,6 +33,7 @@ body, html {
   text-align: center;
   color: var(--text-color);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 :any-link {

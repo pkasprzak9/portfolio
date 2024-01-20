@@ -14,3 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   observer.observe(header);
 });
+
+// Obsługa płynnego przewijania navbara dla starszych przeglądarek
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+});

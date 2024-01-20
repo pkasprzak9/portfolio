@@ -52,7 +52,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--accent-hover);
+  color: var(--accent-color);
 }
 
 /* Header styles */

@@ -26,6 +26,7 @@ function SkillCard({ skill, level }) {
 function SkillsSection() {
   const skills = [
     { skill: "Visual Studio Code", level: "Expert" },
+    { skill: "AI prompting", level: "Expert" },
     { skill: "Git", level: "Advanced" },
     { skill: "Command Line", level: "Advanced" },
     { skill: "Microsoft Office", level: "Advanced" },

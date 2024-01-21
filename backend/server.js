@@ -12,7 +12,6 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(helmet());
 app.use(cors());
-app.use(limiter);
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -26,6 +25,9 @@ app.post('/send-email', (req, res) => {
   const user_email = req.body.email; // Adres e-mail użytkownika
   const message = req.body.message; // Wiadomość od użytkownika
 
+  console.log('Email:', user_email);
+  console.log('Message:', message);
+
   const mailOptions = {
     from: user_email, // Może być też Twój adres e-mail
     to: process.env.EMAIL, // Twój adres e-mail jako odbiorca
@@ -35,8 +37,10 @@ app.post('/send-email', (req, res) => {
 
   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
+      console.error('Błąd przy wysyłaniu e-maila:', error);
       res.status(500).send('Błąd przy wysyłaniu e-maila');
     } else {
+      console.log('E-mail wysłany pomyślnie:', info.response);
       res.status(200).send('E-mail wysłany pomyślnie');
     }
   });
@@ -55,6 +59,7 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minut
   max: 100 // limit każdego IP do 100 żądań na okno czasowe
 });
+app.use(limiter);
 
 app.get('/', (req, res) => {
   res.send('Backend aktywny!');

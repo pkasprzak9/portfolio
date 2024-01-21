@@ -41,6 +41,7 @@ function SkillsSection() {
     { skill: "Data analyze", level: "Intermediate" },
     { skill: "Networking", level: "Intermediate" },
     { skill: "React", level: "Beginner" },
+    { skill: "Node", level: "Beginner" },
     { skill: "Bootstrap", level: "Beginner" },
     { skill: "AOS", level: "Beginner" },
     { skill: "C++", level: "Beginner" },

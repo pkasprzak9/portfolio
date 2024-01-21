@@ -27,3 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  fetch('http://localhost:3000/send-email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, message })
+  })
+  .then(response => response.text())
+  .then(data => {
+    alert('Wiadomość wysłana!');
+  })
+  .catch((error) => {
+    console.error('Błąd:', error);
+    alert('Błąd wysyłania wiadomości');
+  });
+});

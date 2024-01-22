@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 function SkillCard({ skill, level }) {
   // Przykładowa funkcja mapująca opis poziomu na liczbę wypełnionych kółek
   const levelToCircles = {

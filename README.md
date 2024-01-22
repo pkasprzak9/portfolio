@@ -32,3 +32,9 @@ The portfolio is fully functional online, but if you wish to run it locally:
 ## Contributing
 
 Your suggestions and contributions are welcome. Feel free to fork the repo and create pull requests for any enhancements you believe would make this portfolio even better.
+
+## TODO 📝
+
+- **Fix for Swipe-Up Text in Safari on iPhones**: Addressing the issue where the 'swipe up' text is not displaying correctly in Safari browser on iPhones.
+- **Downloadable Multilingual CV**: Implementing a feature to allow visitors to download a more comprehensive CV in both English and Polish.
+- **Enhancing Accessibility**: Working on making the website more accessible to ensure it is user-friendly for people with disabilities.

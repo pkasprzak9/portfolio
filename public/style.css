@@ -307,18 +307,22 @@ footer {
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
-  color: var(--accent-color); /* Biały kolor tekstu */
+  color: var(--accent-color); /* Kolor tekstu */
   background-color: transparent; /* Przezroczyste tło */
-  border: 2px solid var(--accent-color); /* Biała obramówka */
+  border: 2px solid var(--accent-color); /* Obramówka */
   border-radius: 25px; /* Okrągłe rogi */
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px white; /* Biała poświata */
 }
 
 .download-cv-section a:hover {
-  background-color: var(--text-color); /* Białe tło na hover */
-  color: var(--nav-background); /* Tekst koloru tła nawigacji - dla kontrastu */
-  border-color: var(--text-color); /* Kolor obramówki jak tło nawigacji */
+  background-color: var(--text-color); /* Tło na hover */
+  color: var(--nav-background); /* Kolor tekstu na hover */
+  border-color: var(--text-color); /* Kolor obramówki na hover */
+  box-shadow: 0 0 15px var(--accent-color); /* Poświata w kolorze akcentu na hover */
 }
+
+
 

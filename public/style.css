@@ -307,9 +307,9 @@ footer {
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
-  color: var(--text-color); /* Biały kolor tekstu */
+  color: var(--accent-color); /* Biały kolor tekstu */
   background-color: transparent; /* Przezroczyste tło */
-  border: 2px solid var(--text-color); /* Biała obramówka */
+  border: 2px solid var(--accent-color); /* Biała obramówka */
   border-radius: 25px; /* Okrągłe rogi */
   text-transform: uppercase;
   text-decoration: none;
@@ -319,6 +319,6 @@ footer {
 .download-cv-section a:hover {
   background-color: var(--text-color); /* Białe tło na hover */
   color: var(--nav-background); /* Tekst koloru tła nawigacji - dla kontrastu */
-  border-color: var(--nav-background); /* Kolor obramówki jak tło nawigacji */
+  border-color: var(--text-color); /* Kolor obramówki jak tło nawigacji */
 }
 

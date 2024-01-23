@@ -106,7 +106,7 @@ function DownloadCVSection() {
       <div className="download-cv-section">
           <h2>Download my CV</h2>
           <a href="/cv/Paweł-Kasprzak-CV-en.pdf" download="Paweł-Kasprzak-CV-en.pdf">English Version</a>
-          <a href="/cv/Paweł-Kasprzak-CV-en.pdf" download="Paweł-Kasprzak-CV-pl.pdf">Polish Version</a>
+          <a href="/cv/Paweł-Kasprzak-CV-pl.pdf" download="Paweł-Kasprzak-CV-pl.pdf">Polish Version</a>
       </div>
   );
 }

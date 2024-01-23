@@ -301,3 +301,24 @@ footer {
   filter: drop-shadow(0 0 8px var(--accent-color));
 }
 
+.download-cv-section a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-color); /* Biały kolor tekstu */
+  background-color: transparent; /* Przezroczyste tło */
+  border: 2px solid var(--text-color); /* Biała obramówka */
+  border-radius: 25px; /* Okrągłe rogi */
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.download-cv-section a:hover {
+  background-color: var(--text-color); /* Białe tło na hover */
+  color: var(--nav-background); /* Tekst koloru tła nawigacji - dla kontrastu */
+  border-color: var(--nav-background); /* Kolor obramówki jak tło nawigacji */
+}
+

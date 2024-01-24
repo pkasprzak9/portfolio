@@ -1,7 +1,7 @@
-/* Importing Roboto font from Google Fonts */
+/* Importing the Roboto font from Google Fonts for consistent typography */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Root CSS Variables for easy theme management */
+/* Defining root CSS variables for centralized theme customization */
 :root {
   --font-primary: 'Roboto', sans-serif;
   --background-image: url('./img/pexels-emiliano-arano-3608311.jpg');
@@ -13,7 +13,7 @@
   --overlay-color: rgba(0, 0, 0, 0.6);
 }
 
-/* Global styles */
+/* Applying global styles to the entire document */
 body, html {
   height: 100%;
   margin: 0;
@@ -27,12 +27,12 @@ body, html {
   scroll-behavior: smooth;
 }
 
-/* Link styling */
+/* Styling all types of links for a consistent appearance */
 :any-link {
   text-decoration: none;
 }
 
-/* Navigation styles */
+/* Defining the navigation bar's appearance and position */
 nav {
   background: var(--nav-background);
   position: fixed;
@@ -44,6 +44,7 @@ nav {
   z-index: 1000;
 }
 
+/* Styling for navigation links with hover effect */
 nav a {
   color: var(--text-color);
   text-decoration: none;
@@ -55,7 +56,7 @@ nav a:hover {
   color: var(--accent-color);
 }
 
-/* Header styles */
+/* Styles for the header section, including typography and layout */
 .header {
   display: flex;
   flex-direction: column;
@@ -75,13 +76,14 @@ nav a:hover {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Scroll indicator bounce animation */
+/* Animation for a bouncing scroll indicator */
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(-20px); }
   60% { transform: translateY(-10px); }
 }
 
+/* Positioning and styling of the scroll indicator */
 .scroll-indicator-wrapper {
   position: absolute;
   bottom: 3%;
@@ -102,20 +104,20 @@ nav a:hover {
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Fade out animation for scroll indicator */
+/* Fade out animation for the scroll indicator on interaction */
 .fade-out {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.1s, visibility 0.1s;
 }
 
-/* Main content section adjustment */
+/* Adjustments for main content placement */
 main {
   margin-top: -100px;
   padding-top: 100px;
 }
 
-/* General section styles */
+/* General styling for each section */
 section {
   padding: 2rem;
   margin: 0;
@@ -123,7 +125,7 @@ section {
   z-index: 2;
 }
 
-/* Background overlay for sections */
+/* Creating an overlay effect for sections */
 section::after {
   content: '';
   position: absolute;
@@ -135,24 +137,26 @@ section::after {
   z-index: -1;
 }
 
+/* Specific padding adjustments for the 'About' section */
 #about {
   padding-left: 5rem;
   padding-right: 5rem;
 }
 
-/* Button styles */
+/* Styles for button elements */
 .button {
-  background: none; /* Usuń tło */
-  border: none; /* Usuń obramowanie */
-  padding: 0; /* Usuń padding */
-  margin: 0.5rem; /* Dodaj niewielki margines */
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0.5rem;
   transition: transform 0.3s;
-  display: inline-flex; /* Wyśrodkuj ikonę i tekst */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
-/* Contact form styles */
+
+/* Layout and styling for the contact form */
 #contact-form {
   display: flex;
   flex-direction: column;
@@ -160,6 +164,7 @@ section::after {
   margin: auto;
 }
 
+/* Styling for email input and textarea in the contact form */
 #contact-form input[type=email], #contact-form textarea {
   resize: vertical;
   padding: 0.5rem;
@@ -170,10 +175,11 @@ section::after {
   transition: border-color 0.3s;
 }
 
+/* Hover effect for email input and textarea in the contact form */
 #contact-form input[type=email]:focus, #contact-form textarea:focus {
-  background-color: var(--text-color); /* Tło na hover */
-  color: var(--nav-background); /* Kolor tekstu na hover */
-  border-color: var(--text-color); /* Kolor obramówki na hover */
+  background-color: var(--text-color);
+  color: var(--nav-background);
+  border-color: var(--text-color);
   box-shadow: 0 0 15px var(--accent-color);
 }
 
@@ -182,30 +188,32 @@ section::after {
   min-height: 3rem;
 }
 
+/* Styling for the submit button in the contact form */
 #contact-form button[type="submit"] {
   align-self: center;
   padding: 10px 20px;
   display: inline-block;
   font-size: 1rem;
   font-weight: bold;
-  color: var(--accent-color); /* Kolor tekstu */
-  background-color: transparent; /* Przezroczyste tło */
-  border: 2px solid var(--accent-color); /* Obramówka */
-  border-radius: 25px; /* Okrągłe rogi */
+  color: var(--accent-color);
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  border-radius: 25px;
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 10px white; /* Biała poświata */
+  box-shadow: 0 0 10px white;
 }
 
-
+/* Hover effect for the submit button in the contact form */
 #contact-form button[type="submit"]:hover {
-  background-color: var(--text-color); /* Tło na hover */
-  color: var(--nav-background); /* Kolor tekstu na hover */
-  border-color: var(--text-color); /* Kolor obramówki na hover */
+  background-color: var(--text-color);
+  color: var(--nav-background);
+  border-color: var(--text-color);
   box-shadow: 0 0 15px var(--accent-color);
 }
-/* Footer styles */
+
+/* Styling for the footer section */
 footer {
   background: var(--overlay-color);
   padding: 1rem;
@@ -213,7 +221,7 @@ footer {
   z-index: 2;
 }
 
-/* Responsive adjustments for smaller screens */
+/* Responsive styling adjustments for medium-sized screens */
 @media (max-width: 768px) {
   #links .button {
     width: 80%;
@@ -226,6 +234,7 @@ footer {
   }
 }
 
+/* Responsive styling adjustments for small-sized screens */
 @media (max-width: 480px) {
   #links .button {
     width: 90%;
@@ -238,7 +247,7 @@ footer {
   }
 }
 
-/* Skills container and cards */
+/* Grid layout for skills section with responsive cards */
 .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -246,6 +255,7 @@ footer {
   padding: 20px;
 }
 
+/* Styling and hover effect for each skill card */
 .skill-card {
   transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
   background-color: rgba(0, 0, 0, 0.7);
@@ -256,19 +266,22 @@ footer {
 }
 
 .skill-card:hover {
-  transform: scale(1.05); /* Lekkie powiększenie */
-  filter: brightness(1.2); /* Lekkie rozjaśnienie */
+  transform: scale(1.05);
+  filter: brightness(1.2);
 }
 
+/* Dimming effect for non-hovered skill cards */
 .skills-container:hover .skill-card:not(:hover) {
-  opacity: 0.7; /* Przygaszenie innych kart */
+  opacity: 0.7;
 }
 
+/* Display of skill levels with graphical elements */
 .skill-level {
   display: flex;
   justify-content: center;
 }
 
+/* Basic style for level indicators */
 .circle {
   width: 20px;
   height: 20px;
@@ -277,10 +290,12 @@ footer {
   margin: 0 5px;
 }
 
+/* Filled style for active level indicators */
 .circle.filled {
   background-color: var(--accent-color);
 }
 
+/* Layout for social media links with icons */
 .social-links-container {
   display: flex;
   justify-content: center;
@@ -290,6 +305,7 @@ footer {
   border-radius: 5px;
 }
 
+/* Styling and hover effect for social media icons */
 .social-icon {
   width: 40px;
   height: 40px;
@@ -301,32 +317,30 @@ footer {
 .social-icon:hover {
   transform: scale(1.2);
   filter: drop-shadow(0 0 8px var(--accent-color));
-}
+  }
 
-
-.download-cv-section a {
+  /* Styling for the 'Download CV' section with hover effects */
+  .download-cv-section a {
   width: 10rem;
   display: inline-block;
   margin: 10px 10px;
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
-  color: var(--accent-color); /* Kolor tekstu */
-  background-color: transparent; /* Przezroczyste tło */
-  border: 2px solid var(--accent-color); /* Obramówka */
-  border-radius: 25px; /* Okrągłe rogi */
+  color: var(--accent-color);
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  border-radius: 25px;
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 10px white; /* Biała poświata */
-}
+  box-shadow: 0 0 10px white;
+  }
 
-.download-cv-section a:hover {
-  background-color: var(--text-color); /* Tło na hover */
-  color: var(--nav-background); /* Kolor tekstu na hover */
-  border-color: var(--text-color); /* Kolor obramówki na hover */
-  box-shadow: 0 0 15px var(--accent-color); /* Poświata w kolorze akcentu na hover */
-}
-
-
-
+  /* Hover effect for the 'Download CV' section */
+  .download-cv-section a:hover {
+  background-color: var(--text-color);
+  color: var(--nav-background);
+  border-color: var(--text-color);
+  box-shadow: 0 0 15px var(--accent-color);
+  }

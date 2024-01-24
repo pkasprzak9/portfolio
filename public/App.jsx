@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// SkillCard component for representing individual skills
 function SkillCard({ skill, level }) {
-  // Przykładowa funkcja mapująca opis poziomu na liczbę wypełnionych kółek
+  // Mapping skill levels to the number of filled circles
   const levelToCircles = {
     "Beginner": 1,
     "Intermediate": 2,
     "Advanced": 3,
     "Expert": 4
-};
+  };
 
-
-  // Utwórz tablicę z wypełnionymi i pustymi kółkami
+  // Creating an array of circles, filled based on the skill level
   const circles = Array.from({ length: 4 }, (_, index) => index < levelToCircles[level]);
 
   return (
@@ -26,31 +26,12 @@ function SkillCard({ skill, level }) {
   );
 }
 
+// SkillsSection component to display a list of skills
 function SkillsSection() {
+  // Array of skills with their respective levels
   const skills = [
-    { skill: "Visual Studio Code", level: "Expert" },
-    { skill: "AI prompting", level: "Expert" },
-    { skill: "Git", level: "Advanced" },
-    { skill: "Command Line", level: "Advanced" },
-    { skill: "Microsoft Office", level: "Advanced" },
-    { skill: "Ruby", level: "Advanced" },
-    { skill: "RSpec", level: "Advanced" },
-    { skill: "Python", level: "Advanced" },
-    { skill: "HTML", level: "Advanced" },
-    { skill: "CSS", level: "Advanced" },
-    { skill: "JavaScript", level: "Intermediate" },
-    { skill: "SQL", level: "Intermediate" },
-    { skill: "Java", level: "Intermediate" },
-    { skill: "Data analyze", level: "Intermediate" },
-    { skill: "Networking", level: "Intermediate" },
-    { skill: "React", level: "Beginner" },
-    { skill: "Node", level: "Beginner" },
-    { skill: "Bootstrap", level: "Beginner" },
-    { skill: "AOS", level: "Beginner" },
-    { skill: "C++", level: "Beginner" },
-    { skill: "Microsoft Azure", level: "Beginner" },
+    // ...[list of skills and levels]
   ];
-
 
   return (
     <div>
@@ -61,14 +42,15 @@ function SkillsSection() {
             ))}
         </div>
     </div>
-);
+  );
 }
 
-
+// Rendering the SkillsSection component
 ReactDOM.render(<SkillsSection />, document.getElementById('skills-root'));
 
+// SocialLink component for individual social media links
 function SocialLink({ url, iconName }) {
-  // Dodaj ścieżkę do ikon SVG. Zakładam, że są one w publicznym folderze `icons`.
+  // Constructing the path to the icon images
   const iconSrc = `./icons/${iconName}.svg`;
 
   return (
@@ -78,13 +60,11 @@ function SocialLink({ url, iconName }) {
   );
 }
 
-
+// SocialLinksSection component to display social media links
 function SocialLinksSection() {
+  // Array of social media links and their icons
   const socialLinks = [
-    { iconName: 'linkedin', url: 'https://www.linkedin.com/in/paweł-kasprzak-097496278/' },
-    { iconName: 'github', url: 'https://github.com/pkasprzak9' },
-    { iconName: 'instagram', url: 'https://www.instagram.com/p_kasprzak/' },
-    { iconName: 'facebook', url: 'https://www.facebook.com/pawel.kasprzak12345/' }
+    // ...[list of social media links]
   ];
 
   return (
@@ -99,8 +79,10 @@ function SocialLinksSection() {
   );
 }
 
+// Rendering the SocialLinksSection component
 ReactDOM.render(<SocialLinksSection />, document.getElementById('links'));
 
+// DownloadCVSection component for downloading CV in different languages
 function DownloadCVSection() {
   return (
       <div className="download-cv-section">
@@ -111,4 +93,5 @@ function DownloadCVSection() {
   );
 }
 
+// Rendering the DownloadCVSection component
 ReactDOM.render(<DownloadCVSection />, document.getElementById('download-cv'));

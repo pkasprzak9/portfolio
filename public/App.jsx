@@ -30,7 +30,27 @@ function SkillCard({ skill, level }) {
 function SkillsSection() {
   // Array of skills with their respective levels
   const skills = [
-    // ...[list of skills and levels]
+    { skill: "Visual Studio Code", level: "Expert" },
+    { skill: "AI prompting", level: "Expert" },
+    { skill: "Git", level: "Advanced" },
+    { skill: "Command Line", level: "Advanced" },
+    { skill: "Microsoft Office", level: "Advanced" },
+    { skill: "Ruby", level: "Advanced" },
+    { skill: "RSpec", level: "Advanced" },
+    { skill: "Python", level: "Advanced" },
+    { skill: "HTML", level: "Advanced" },
+    { skill: "CSS", level: "Advanced" },
+    { skill: "JavaScript", level: "Intermediate" },
+    { skill: "SQL", level: "Intermediate" },
+    { skill: "Java", level: "Intermediate" },
+    { skill: "Data analyze", level: "Intermediate" },
+    { skill: "Networking", level: "Intermediate" },
+    { skill: "React", level: "Beginner" },
+    { skill: "Node", level: "Beginner" },
+    { skill: "Bootstrap", level: "Beginner" },
+    { skill: "AOS", level: "Beginner" },
+    { skill: "C++", level: "Beginner" },
+    { skill: "Microsoft Azure", level: "Beginner" },
   ];
 
   return (
@@ -50,7 +70,6 @@ ReactDOM.render(<SkillsSection />, document.getElementById('skills-root'));
 
 // SocialLink component for individual social media links
 function SocialLink({ url, iconName }) {
-  // Constructing the path to the icon images
   const iconSrc = `./icons/${iconName}.svg`;
 
   return (
@@ -62,9 +81,11 @@ function SocialLink({ url, iconName }) {
 
 // SocialLinksSection component to display social media links
 function SocialLinksSection() {
-  // Array of social media links and their icons
   const socialLinks = [
-    // ...[list of social media links]
+    { iconName: 'linkedin', url: 'https://www.linkedin.com/in/paweł-kasprzak-097496278/' },
+    { iconName: 'github', url: 'https://github.com/pkasprzak9' },
+    { iconName: 'instagram', url: 'https://www.instagram.com/p_kasprzak/' },
+    { iconName: 'facebook', url: 'https://www.facebook.com/pawel.kasprzak12345/' }
   ];
 
   return (

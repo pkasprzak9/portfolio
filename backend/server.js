@@ -9,64 +9,74 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.set('trust proxy', 1); // Ustawienie trust proxy dla Heroku
+// Trust proxy setting for Heroku deployment
+app.set('trust proxy', 1);
 
+// Middlewares for parsing JSON, security headers, and CORS
 app.use(bodyParser.json());
 app.use(helmet());
 app.use(cors());
 
+// Rate limiting middleware
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minut
-  max: 100 // limit każdego IP do 100 żądań na okno czasowe
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // Limit each IP to 100 requests per windowMs
 });
-app.use(limiter); // Zastosowanie limitu przed innymi ścieżkami
+app.use(limiter);
 
-app.use(express.static('public')); // Serwowanie plików statycznych
+// Serving static files from 'public' directory
+app.use(express.static('public'));
 
+// Nodemailer transporter setup
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL, // Adres e-mail z Twojej konfiguracji
-    pass: process.env.PASSWORD // Hasło do adresu e-mail z Twojej konfiguracji
+    user: process.env.EMAIL, // Email address from your config
+    pass: process.env.PASSWORD // Email password from your config
   }
 });
 
+// Endpoint to handle POST request for sending email
 app.post('/send-email', (req, res) => {
-  const user_email = req.body.email; // Adres e-mail użytkownika
-  const message = req.body.message; // Wiadomość od użytkownika
-  console.log('Odebrano email:', user_email); // Wyświetli adres e-mail użytkownika w konsoli
-  console.log('Odebrano wiadomość:', message); // Wyświetli wiadomość użytkownika w konsoli
+  const user_email = req.body.email; // User's email address
+  const message = req.body.message; // User's message
 
+  // Logging the received email and message
+  console.log('Received email:', user_email);
+  console.log('Received message:', message);
 
+  // Mail options for Nodemailer
   const mailOptions = {
-    from: user_email, // Może być też Twój adres e-mail
-    to: process.env.EMAIL, // Adres e-mail odbiorcy
-    subject: 'Nowa wiadomość z formularza kontaktowego',
-    text: `Wiadomość od: ${user_email}, Treść: ${message}`
+    from: user_email, // Sender's email address
+    to: process.env.EMAIL, // Recipient's email address
+    subject: 'New message from contact form',
+    text: `Message from: ${user_email}, Content: ${message}`
   };
 
+  // Sending the email
   transporter.sendMail(mailOptions, function(error, info) {
     if (error) {
-      console.error('Błąd przy wysyłaniu e-maila:', error);
-      res.status(500).send('Błąd przy wysyłaniu e-maila');
+      console.error('Error sending email:', error);
+      res.status(500).send('Error sending email');
     } else {
-      console.log(user_email, message);
-      console.log('E-mail wysłany pomyślnie:', info.response);
-      res.status(200).send('E-mail wysłany pomyślnie');
+      console.log('Email sent successfully:', info.response);
+      res.status(200).send('Email sent successfully');
     }
   });
 });
 
+// Root endpoint
 app.get('/', (req, res) => {
-  res.send('Backend aktywny!');
+  res.send('Backend active!');
 });
 
+// Starting the server
 app.listen(port, () => {
-  console.log(`Serwer działa na porcie ${port}`);
+  console.log(`Server running on port ${port}`);
 });
 
-// Middleware do obsługi błędów, powinien być na końcu łańcucha middleware
+// Error handling middleware (should be last in the middleware chain)
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Coś poszło nie tak!');
+  res.status(500).send('Something went wrong!');
 });

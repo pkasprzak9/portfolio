@@ -1,16 +1,22 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
-  entry: './public/App.jsx', // Punkt wejścia Twojej aplikacji React
+  mode: 'development', // Development mode for better debuggability
+
+  // Entry point for React app
+  entry: './public/App.jsx',
+
+  // Output for the compiled bundle
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js', // Skompilowany plik wynikowy
+    filename: 'bundle.js',
   },
+
+  // Module rules (Babel for JSX)
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // Transpilacja plików .js i .jsx
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -21,17 +27,19 @@ module.exports = {
       }
     ]
   },
+
+  // Auto-resolve .js and .jsx extensions
   resolve: {
-    extensions: ['.js', '.jsx'] // Rozpoznawanie plików .js i .jsx
+    extensions: ['.js', '.jsx']
   },
+
+  // Development server setup
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
+    static: { directory: path.join(__dirname, 'public') },
     compress: true,
     port: 3000,
     open: true,
     hot: true,
-    historyApiFallback: true, // Dodaj to, jeśli używasz React Router
+    historyApiFallback: true, // For React Router
   }
 };

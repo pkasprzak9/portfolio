@@ -33,15 +33,23 @@ body, html {
 }
 
 /* Defining the navigation bar's appearance and position */
-nav {
-  background: var(--nav-background);
+#navbar-root {
+  background: black;
   position: fixed;
   width: 100%;
   top: 0;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   display: flex;
   justify-content: center;
   z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.hamburger {
+  display: none;
 }
 
 /* Styling for navigation links with hover effect */
@@ -222,7 +230,8 @@ footer {
 }
 
 /* Responsive styling adjustments for medium-sized screens */
-@media (max-width: 768px) {
+
+@media screen and (max-width: 768px) {
   #links .button {
     width: 80%;
     margin: 0.5rem 0;
@@ -232,18 +241,39 @@ footer {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-}
 
-/* Responsive styling adjustments for small-sized screens */
-@media (max-width: 480px) {
-  #links .button {
-    width: 90%;
-    padding: 0.6rem;
+  #navbar-root {
+    padding: 0.7rem 0.7rem;
+    justify-content: start;
   }
 
-  #about {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .hamburger {
+    display: block;
+    position:relative;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: black;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    color: #fff;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 }
 

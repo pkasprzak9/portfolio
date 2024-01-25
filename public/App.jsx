@@ -1,5 +1,48 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
+
+function Navbar() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const closeNav = () => {
+    setIsNavOpen(false);
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (!event.target.closest('.nav-links') && !event.target.closest('.hamburger')) {
+        closeNav();
+      }
+    };
+
+    if (isNavOpen) {
+      document.addEventListener('click', handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [isNavOpen]);
+
+  return (
+    <nav>
+      <div className="hamburger" onClick={() => setIsNavOpen(!isNavOpen)}>
+        <img src="/icons/bars-solid.svg" alt="Menu" />
+      </div>
+      <div className={isNavOpen ? "nav-links open" : "nav-links"}>
+        <a href="#about" onClick={closeNav}>About Me</a>
+        <a href="#skills-root" onClick={closeNav}>My Skills</a>
+        <a href="#download-cv" onClick={closeNav}>Download My CV</a>
+        <a href="#contact" onClick={closeNav}>Contact Me</a>
+        <a href="#links" onClick={closeNav}>My Social Links</a>
+      </div>
+    </nav>
+  );
+}
+
+const root = createRoot(document.getElementById('navbar-root'));
+root.render(<Navbar />);
+
 
 // SkillCard component for representing individual skills
 function SkillCard({ skill, level }) {
@@ -66,7 +109,8 @@ function SkillsSection() {
 }
 
 // Rendering the SkillsSection component
-ReactDOM.render(<SkillsSection />, document.getElementById('skills-root'));
+const skillsRoot = createRoot(document.getElementById('skills-root'));
+skillsRoot.render(<SkillsSection />);
 
 // SocialLink component for individual social media links
 function SocialLink({ url, iconName }) {
@@ -101,7 +145,8 @@ function SocialLinksSection() {
 }
 
 // Rendering the SocialLinksSection component
-ReactDOM.render(<SocialLinksSection />, document.getElementById('links'));
+const linksRoot = createRoot(document.getElementById('links'));
+linksRoot.render(<SocialLinksSection />);
 
 // DownloadCVSection component for downloading CV in different languages
 function DownloadCVSection() {
@@ -115,4 +160,5 @@ function DownloadCVSection() {
 }
 
 // Rendering the DownloadCVSection component
-ReactDOM.render(<DownloadCVSection />, document.getElementById('download-cv'));
+const downloadCVRoot = createRoot(document.getElementById('download-cv'));
+downloadCVRoot.render(<DownloadCVSection />);

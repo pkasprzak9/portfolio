@@ -1,40 +1,58 @@
-# Paweł Kasprzak's Portfolio
+# Portfolio
 
-Welcome to the GitHub repository of my personal portfolio, viewable at [Paweł Kasprzak's Portfolio Site](https://pawel-kasprzak.site). This portfolio serves as a vibrant showcase of my web development skills and design sensibility.
+This repository contains the source code for my personal portfolio website. The project has been updated to use React for enhanced modularity, maintainability, and scalability.
 
-## About the Portfolio
+## Project Overview
 
-This portfolio website is a culmination of my skills in frontend development, beautifully integrated with a backend that supports essential functionalities. It's designed not just to tell, but to show who I am as a developer and a creative professional.
+The portfolio showcases my skills, projects, and contact information. By transitioning to a React-based architecture, the project benefits from a component-based structure, making it easier to manage and update.
 
-## Key Features
+## Features
 
-- **Elegant Frontend**: Built using React, the site boasts dynamic components and a responsive layout. Each page is crafted to provide an immersive experience, showcasing my attention to detail and design.
-- **Responsive Design**: Styled with custom CSS, the site is visually appealing and adapts seamlessly across different devices and screen sizes.
-- **Backend Integration**: The Node.js-based backend with Express handles functionalities like email communication through a contact form, demonstrating my full-stack capabilities.
-- **Engaging Visuals**: The use of high-quality images and icons adds a layer of visual appeal, making the portfolio not just informative but also engaging.
+- **Responsive Navbar**: A hamburger menu that toggles the navigation links for smaller screens.
+- **Skills Section**: Displays my skills with visual indicators of proficiency levels.
+- **Download CV**: Links to download my CV in English and Polish.
+- **Social Links**: Buttons linking to my social media profiles.
 
-## Technologies Used
+## Why React?
 
-- **React**: For building a dynamic and interactive user interface.
-- **Node.js and Express**: Powering the backend for server-side operations.
-- **CSS**: For custom and responsive styling.
-- **Webpack and Babel**: Ensuring optimal bundling and compatibility across browsers.
+React was chosen for this project due to its several advantages:
+- **Component-Based Architecture**: Simplifies the creation of reusable UI components.
+- **State Management**: Efficient handling of dynamic data and UI states.
+- **Virtual DOM**: Improves performance by minimizing direct DOM manipulation.
+- **Developer Tools**: Enhances debugging and development workflow with powerful tools.
 
-## Local Setup (Optional)
+## Getting Started
 
-The portfolio is fully functional online, but if you wish to run it locally:
+To run this project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/pkasprzak9/portfolio.git`
-2. Navigate to the project directory and install dependencies: `npm install`
-3. Start the server: `npm start`
-4. Visit `http://localhost:3000` in your browser.
+### Prerequisites
 
-## Contributing
+- Node.js and npm installed on your machine.
 
-Your suggestions and contributions are welcome. Feel free to fork the repo and create pull requests for any enhancements you believe would make this portfolio even better.
+### Installation
 
-## TODO 📝
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/pkasprzak9/portfolio.git
+   cd portfolio
+   ```
 
-- **Fix for Swipe-Up Text in Safari on iPhones**: Addressing the issue where the 'swipe up' text is not displaying correctly in Safari browser on iPhones.
-- **Downloadable Multilingual CV**: Implementing a feature to allow visitors to download a more comprehensive CV in both English and Polish.
-- **Enhancing Accessibility**: Working on making the website more accessible to ensure it is user-friendly for people with disabilities.
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+4. Open your browser and navigate to `http://localhost:3000` to view the website.
+
+## Project Structure
+
+- `public`: Contains the HTML file and static assets.
+- `src/components`: Contains React components such as `Navbar`, `SkillsSection`, `DownloadCVSection`, and `SocialLinksSection`.
+- `src/App.js`: Main application file that renders the components.
+- `src/index.js`: Entry point for the React application.
+
